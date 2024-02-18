@@ -3,6 +3,7 @@ package com.facebook.youtube_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.facebook.ktor_project.HomePage
 import com.facebook.reels_project.ReelsActivity
 import com.facebook.reels_project.Video
 import com.facebook.youtube_project.databinding.ActivityMainBinding
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_home -> {
-                    // Handle home navigation
+                    val intent = Intent(this, HomePage::class.java)
+                    startActivity(intent)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.navigation_dashboard -> {
