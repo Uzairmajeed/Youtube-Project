@@ -6,6 +6,9 @@ plugins {
 android {
     namespace 'com.facebook.reels_project'
     compileSdk 34
+    defaultConfig {
+        minSdk 24
+    }
 
     buildTypes {
         release {

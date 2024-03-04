@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.facebook.ktor_project.HomePage
 import com.facebook.reels_project.ReelsActivity
+import com.facebook.reels_project.ReelsFragment
 import com.facebook.reels_project.Video
 import com.facebook.youtube_project.databinding.ActivityMainBinding
 
@@ -23,11 +24,18 @@ class MainActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.navigation_dashboard -> {
-                    // Pass the videos data to ReelsActivity
-                    val intent = Intent(this, ReelsActivity::class.java)
+                    val reelsFragment = ReelsFragment()
+
+                    // Pass the videos data to ReelsFragment using arguments
+                    val bundle = Bundle()
                     val videos = createVideos() // Replace with your logic to create videos
-                    intent.putExtra("videos", videos)
-                    startActivity(intent)
+                    bundle.putSerializable("videos", videos)
+                    reelsFragment.arguments = bundle
+
+                    val fragmentTransaction = supportFragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.fragmentContainer, reelsFragment)
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.commit()
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.navigation_notifications -> {
