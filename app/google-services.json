@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "738288819502",
+    "project_id": "project-4909e",
+    "storage_bucket": "project-4909e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738288819502:android:5460c8b0b9dd5b8de92ebf",
+        "android_client_info": {
+          "package_name": "com.facebook.youtube_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE2mDWx3MKqg0tF8gkMffCgH7g6pitca8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
